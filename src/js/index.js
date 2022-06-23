@@ -5,4 +5,4 @@ async function teste() {
     console.log(json);
 }
 
-teste();
+// teste();

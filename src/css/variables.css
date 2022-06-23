@@ -1,4 +1,7 @@
 :root {
-    --cardBg: #000;
+    --cardBg: #ffffff;
+    --cardWidth: 1000px;
+    --cardHeight: 500px;
+    --effectWidth: 70px;
     --sageBg: #78fad8ff;
 }
