@@ -1,7 +1,17 @@
 :root {
     --cardBg: #ffffff;
-    --cardWidth: 1000px;
-    --cardHeight: 500px;
-    --effectWidth: 70px;
+    --cardWidth: 800px;
+    --cardHeight: 400px;
+    --effectWidth: 100px;
+    
     --sageBg: #78fad8ff;
+
+    --skillname-size: 15px;
+    --skillname-weight: 700;
+    --desc-weight: 300;
+    --desc-size: 12px;
+
+    --list-border: #ffffff5d;
+    --list-border-hover: #ffeba8;
+    --list-bg-hover: #ffffff5d;
 }
