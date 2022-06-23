@@ -108,16 +108,16 @@ body::before {
 }
 
 .skill:nth-child(1) {
-    margin: 0 20px 0 80px;
+    margin: 0 20px 0 50px;
 }
 .skill:nth-child(2) {
-    margin: 0 40px 0 60px;
+    margin: 0 40px 0 30px;
 }
 .skill:nth-child(3) {
-    margin: 0 60px 0 40px;
+    margin: 0 60px 0 10px;
 }
 .skill:nth-child(4) {
-    margin: 0 80px 0 20px;
+    margin: 0 80px 0 -10px;
 }
 
 .agent-list {
@@ -133,6 +133,7 @@ body::before {
     cursor: pointer;
     width: 75px;
     height: 75px;
+    transition: .1s ease-in-out;
 }
 
 .agent:hover {
