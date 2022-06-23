@@ -10,19 +10,62 @@ body {
 }
 
 .card {
-    width: 600px;
-    height: 300px;
-    background-color: black;
+    display: flex;
+    width: 900px;
+    height: 400px;
+    background-color: var(--cardBg);
+    position: relative;
 }
 
 .agent-img {
-    max-width: 300px;
-    max-height: 300px;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    z-index: 1;
+    background-color: var(--sageBg);
+}
+
+.agent-img::before {
+    content: '';
+    position: absolute;
+    background: url(../img/background.png) center center no-repeat;
+    background-size: contain;
+    width: 110%;
+    height: 110%;
+    z-index: -1;
+    filter: brightness(200%);
 }
 
 .agent-img img {
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 130%;
+    width: 130%;
+}
+
+.effect {
+    background-image: linear-gradient(to bottom right, var(--sageBg) 50%, black 50%);
+    width: 70px;
+}
+
+.skills {
+    display: flex;
+    width: 50%;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.skill {
+    color: white;
+    font-size: 13px;
     width: 100%;
-    background: url(../img/background.png) center center no-repeat;
-    background-size: contain;
+    padding-right: 30px;
 }
