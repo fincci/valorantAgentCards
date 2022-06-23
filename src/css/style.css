@@ -1,7 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300;400;700;900&display=swap');
 
 body {
-    background-color: whitesmoke;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -20,7 +19,7 @@ body::before {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    gap: 100px;
+    gap: 200px;
 }
 
 .card {
@@ -38,13 +37,15 @@ body::before {
     background-color: var(--sageBg);
 }
 
-.agent-img::before {
-    content: '';
+.img-bg {
     position: absolute;
-    background: url(../img/background.png) center center no-repeat;
+    background: url() center center no-repeat;
     background-size: contain;
-    width: 110%;
-    height: 110%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
     filter: brightness(200%);
 }
 
@@ -55,6 +56,18 @@ body::before {
     transform: translate(-50%, -50%);
     height: 120%;
     width: 120%;
+    z-index: 2;
+}
+
+.name {
+    font-family: 'Anton', sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 150%);
 }
 
 .skills {
