@@ -1,5 +1,4 @@
 card()
-firstCard()
 
 async function card() {
     const url = `https://valorant-api.com/v1/agents`
@@ -7,6 +6,7 @@ async function card() {
     const json = await response.json();
     const data = await json.data;
     await createList(data);
+    await firstCard(data)
     clickEvent(data);
 }
 
@@ -84,28 +84,28 @@ async function changeCard(name, id, data) {
     }
 }
 
-async function firstCard() {
-    changeName();
-    changeImg();
-    changeSkills();
-    changeColorBg()
+async function firstCard(data) {
+    changeName('Sage');
+    changeImg(data);
+    changeSkills(data);
+    changeColorBg('Sage')
 
     function changeName(name) {
         const namePlace = document.querySelector('.name')
         namePlace.innerHTML = `${name.toUpperCase()}`
     }
 
-    function changeImg(name, id, data) {
+    function changeImg(data) {
         const imgPlace = document.getElementById('agentPortrait')
         const imgContainer = document.querySelector('.img-bg')
-        imgPlace.src = data[id].fullPortraitV2
-        imgPlace.alt = name
-        imgContainer.style.backgroundImage = `url(${data[id].background})`
+        imgPlace.src = data[16].fullPortraitV2
+        imgPlace.alt = 'Sage'
+        imgContainer.style.backgroundImage = `url(${data[16].background})`
     }
 
-    function changeSkills(name, id, data) {
+    function changeSkills(data) {
         const skillList = document.querySelector('.list')
-        const agent = data[id]
+        const agent = data[16]
         if (agent.abilities.length !== skillList.length) {
             skillList.innerHTML = '';
         }
