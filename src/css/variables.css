@@ -4,12 +4,30 @@
     --cardHeight: 400px;
     --effectWidth: 100px;
     
+    --fadeBg: #517cacff;
+    --breachBg: #bc542dff;
+    --razeBg: #d89e4fff;
+    --chamberBg: #30aae1ff;
+    --kayoBg: #2bf8ff;
+    --skyeBg: #638b27;
+    --cypherBg: #d18a5bff;
+    --sovaBg: #ebccaeff;
+    --killjoyBg: #e6d759ff;
+    --viperBg: #33bb3c;
+    --phoenixBg: #f7bf60ff;
+    --astraBg: #ef90afff;
+    --brimstoneBg: #9c5f1a;
+    --neonBg: #32cdfc;
+    --yoruBg: #2f3dff;
     --sageBg: #78fad8ff;
+    --reynaBg: #9000a3;
+    --omenBg: #3e4991;
+    --jettBg: #b7f7f3;
 
     --skillname-size: 15px;
     --skillname-weight: 700;
     --desc-weight: 300;
-    --desc-size: 12px;
+    --desc-size: 11px;
 
     --list-border: #ffffff5d;
     --list-border-hover: #ffeba8;

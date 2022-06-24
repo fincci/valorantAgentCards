@@ -1,4 +1,5 @@
 card()
+firstCard()
 
 async function card() {
     const url = `https://valorant-api.com/v1/agents`
@@ -39,6 +40,7 @@ async function changeCard(name, id, data) {
     changeName(name);
     changeImg(name, id, data);
     changeSkills(name, id, data);
+    changeColorBg(name, id, data)
 
     function changeName(name) {
         const namePlace = document.querySelector('.name')
@@ -56,14 +58,13 @@ async function changeCard(name, id, data) {
     function changeSkills(name, id, data) {
         const skillList = document.querySelector('.list')
         const agent = data[id]
-        console.log(agent.abilities);
         if (agent.abilities.length !== skillList.length) {
             skillList.innerHTML = '';
         }
-        for (let i = 0; i < agent.abilities.length; i++) {
+        for (let i = 0; i < 4; i++) {
             const skill = agent.abilities[i];
-            skillList.innerHTML += 
-            `<li class="skill" id="skill${i}">
+            skillList.innerHTML +=
+                `<li class="skill" id="skill${i}">
                 <img src="${skill.displayIcon}" alt="Skill Symbol">
                 <div class="description">
                     <h4>${skill.displayName}</h4>
@@ -71,5 +72,62 @@ async function changeCard(name, id, data) {
                 </div>
             </li>`
         }
+    }
+
+    function changeColorBg(name) {
+        const agentImgContainer = document.querySelector('.agent-img')
+        const cardCenter = document.querySelector('.card-center')
+        const agentColorBg = `var(--${name.toLowerCase().replace('/', '')}Bg)`
+        const gradient = `linear-gradient(to bottom right, ${agentColorBg} 50%, var(--cardBg) 50%)`
+        agentImgContainer.style.background = agentColorBg
+        cardCenter.style.background = gradient
+    }
+}
+
+async function firstCard() {
+    changeName();
+    changeImg();
+    changeSkills();
+    changeColorBg()
+
+    function changeName(name) {
+        const namePlace = document.querySelector('.name')
+        namePlace.innerHTML = `${name.toUpperCase()}`
+    }
+
+    function changeImg(name, id, data) {
+        const imgPlace = document.getElementById('agentPortrait')
+        const imgContainer = document.querySelector('.img-bg')
+        imgPlace.src = data[id].fullPortraitV2
+        imgPlace.alt = name
+        imgContainer.style.backgroundImage = `url(${data[id].background})`
+    }
+
+    function changeSkills(name, id, data) {
+        const skillList = document.querySelector('.list')
+        const agent = data[id]
+        if (agent.abilities.length !== skillList.length) {
+            skillList.innerHTML = '';
+        }
+        for (let i = 0; i < 4; i++) {
+            const skill = agent.abilities[i];
+            skillList.innerHTML +=
+                `<li class="skill" id="skill${i}">
+                <img src="${skill.displayIcon}" alt="Skill Symbol">
+                <div class="description">
+                    <h4>${skill.displayName}</h4>
+                    <p>${skill.description}</p>
+                </div>
+            </li>`
+        }
+    }
+
+    function changeColorBg(name) {
+        const agentImgContainer = document.querySelector('.agent-img')
+        const cardCenter = document.querySelector('.card-center')
+        const agentColorBg = `var(--${name.toLowerCase().replace('/', '')}Bg)`
+        const gradient = `linear-gradient(to bottom right, ${agentColorBg} 50%, var(--cardBg) 50%)`
+        agentImgContainer.style.background = agentColorBg
+        cardCenter.style.background = gradient
     }
 }

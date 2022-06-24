@@ -75,8 +75,7 @@ body::before {
     width: 50%;
 }
 
-.skills::before {
-    content: '';
+.card-center {
     background-image: linear-gradient(to bottom right, var(--sageBg) 50%, var(--cardBg) 50%);
     width: var(--effectWidth);
     height: var(--cardHeight);
@@ -89,20 +88,14 @@ body::before {
 .list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 30px;
     filter: brightness(0);
 }
 
 .skill img {
     width: 50px;
     height: 50px;
-}
-
-.description {
-    display: flex;
-    flex-direction: column;
 }
 
 .skill {
@@ -115,7 +108,13 @@ body::before {
     gap: 10px;
 }
 
-.skill h4 {
+.description {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+}
+
+.description h4 {
     font-size: var(--skillname-size);
     font-weight: var(--skillname-weight);
 }
