@@ -6,7 +6,8 @@ body {
 
 body::before {
     content: '';
-    background-image: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta2b1167957d775df/629003b1d31030576a34bbcb/map1920x1080.jpg?auto=webp&disable=upscale&height=549');
+    background: url('https://images.contentstack.io/v3/assets/bltb6530b271fddd0b1/blta2b1167957d775df/629003b1d31030576a34bbcb/map1920x1080.jpg?auto=webp&disable=upscale&height=549') center center no-repeat;
+    background-size: cover;
     width: 100vw;
     height: 100vh;
     position: absolute;
@@ -16,10 +17,9 @@ body::before {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
-    gap: 200px;
 }
 
 .card {
@@ -68,6 +68,7 @@ body::before {
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 150%);
+    user-select: none;
 }
 
 .skills {
@@ -93,11 +94,6 @@ body::before {
     filter: brightness(0);
 }
 
-.skill img {
-    width: 50px;
-    height: 50px;
-}
-
 .skill {
     color: white;
     font-size: var(--desc-size);
@@ -106,6 +102,16 @@ body::before {
     flex-direction: row;
     align-items: center;
     gap: 10px;
+    transition: .1s ease-in-out;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
+}
+
+.skill:hover {
+    transform: scale(1.05);
 }
 
 .description {
