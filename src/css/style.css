@@ -30,11 +30,24 @@ body::before {
     position: relative;
 }
 
+@keyframes slide-right-img {
+    0% {width: 0; opacity: 0;}
+    100% {width: 50%; opacity: 1;}
+}
+
 .agent-img {
     width: 50%;
     height: var(--cardHeight);
     position: relative;
     background-color: var(--sageBg);
+    animation: slide-right-img 1s;
+}
+
+.agent-img.show {
+    display: flex;
+}
+.agent-img.hide {
+    display: none;
 }
 
 .img-bg {
@@ -76,6 +89,11 @@ body::before {
     width: 50%;
 }
 
+@keyframes slide-right-dividor {
+    0% {width: var(--effectWidth); opacity: 1;}
+    100% {width: 0; opacity: 0;}
+}
+
 .card-center {
     background-image: linear-gradient(to bottom right, var(--sageBg) 50%, var(--cardBg) 50%);
     width: var(--effectWidth);
@@ -84,6 +102,7 @@ body::before {
     top: 50%;
     left: 50%;
     transform: translate(-100%, -50%);
+    animation: slide-right-dividor 1s reverse;
 }
 
 .list {
